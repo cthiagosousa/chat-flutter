@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:chat/screens/chat_screen.dart';
+import 'package:chat/screens/chat_list_screen.dart';
 import 'package:chat/screens/contacts_screen.dart';
 import 'package:chat/components/app_bar_widget.dart';
 import 'package:chat/components/tab_bar_widget.dart';
@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               child: TabBarView(
                 controller: _tabController,
                 children: [
-                  ChatScreen(),
+                  ChatListScreen(),
                   ContactsScreen(),
                 ],
               ),

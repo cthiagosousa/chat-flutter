@@ -19,7 +19,7 @@ class DrawerWidget extends StatelessWidget {
             DrawerButtonWidget(
               text: "Configurações",
               icon: Icons.settings,
-              onTap: () {},
+              onTap: () => Navigator.pushNamed(context, 'settings/'),
             ),
           ],
         ),

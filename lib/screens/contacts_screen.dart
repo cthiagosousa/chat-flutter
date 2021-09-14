@@ -1,3 +1,4 @@
+import 'package:chat/components/contact_item_widget.dart';
 import 'package:flutter/material.dart';
 
 class ContactsScreen extends StatelessWidget {
@@ -13,8 +14,16 @@ class ContactsScreen extends StatelessWidget {
           topRight: Radius.circular(30),
         ),
       ),
-      child: Center(
-        child: Text("Contacts"),
+      child: Padding(
+        padding: EdgeInsets.only(top: 20),
+        child: ListView(
+          children: [
+            ContactItemWidget(
+              profileIcon: "TS",
+              name: "Thiago",
+            ),
+          ],
+        ),
       ),
     );
   }

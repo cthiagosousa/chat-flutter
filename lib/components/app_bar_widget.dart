@@ -17,17 +17,6 @@ class AppBarWidget extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              /* IconButton(
-                icon: Icon(Icons.menu),
-                color: Theme.of(context).iconTheme.color,
-                iconSize: Theme.of(context).iconTheme.size!,
-                splashRadius: 20.0,
-                onPressed: () => Drawer(
-                  child: Center(
-                    child: Text('Drawer'),
-                  ),
-                ),
-              ), */
               Text(
                 "Thiago Sousa",
                 style: Theme.of(context).textTheme.headline6,
