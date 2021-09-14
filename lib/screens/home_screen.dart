@@ -1,85 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:chat/screens/chat_screen.dart';
+import 'package:chat/screens/contacts_screen.dart';
+import 'package:chat/components/app_bar_widget.dart';
+import 'package:chat/components/tab_bar_widget.dart';
+import 'package:chat/components/drawer_widget.dart';
 
 class HomeScreen extends StatefulWidget {
-
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
+class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    final _tabController = TabController(length: 3, vsync: this);
+    final _tabController = TabController(length: 2, vsync: this);
 
     return DefaultTabController(
       length: 3,
       child: Scaffold(
+        backgroundColor: Theme.of(context).primaryColor,
         appBar: AppBar(
-          title: Text("Chat"),
-          centerTitle: true,
-          toolbarHeight: 120,
-          flexibleSpace: Container(
-            color: Colors.blue[800],
+          title: Text(
+            "WhatsChat",
+            style: Theme.of(context).textTheme.headline1,
           ),
-
-          bottom: TabBar(
-            controller: _tabController,
-            tabs: [
-              Tab(
-                icon: Icon(Icons.message),
-              ),
-              Tab(
-                icon: Icon(Icons.contacts),
-              ),
-              Tab(
-                icon: Icon(Icons.message),
-              ),
-            ],
+          centerTitle: true,
+          toolbarHeight: 100,
+          elevation: 0,
+          bottom: PreferredSize(
+            preferredSize: Size.fromHeight(50),
+            child: AppBarWidget(height: 50),
           ),
         ),
-        body: TabBarView(
-          controller: _tabController,
+        drawer: DrawerWidget(),
+        body: Column(
           children: [
-            Container(
-            width: double.infinity,
-            height: double.infinity,
-            decoration: BoxDecoration(
-              color: Theme.of(context).backgroundColor,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20)
-              )
-            ),
-            child: Center(
-              child: Text("Chat"),
-              ),
-            ),
-            Container(
-            width: double.infinity,
-            height: double.infinity,
-            decoration: BoxDecoration(
-              color: Theme.of(context).backgroundColor,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20)
-              )
-            ),
-            child: Center(
-              child: Text("Contacts"),
-              ),
-            ),
-            Container(
-            width: double.infinity,
-            height: double.infinity,
-            decoration: BoxDecoration(
-              color: Theme.of(context).backgroundColor,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20)
-              )
-            ),
-            child: Center(
-              child: Text("Chat"),
+            TabBarWidget(tabController: _tabController),
+            Expanded(
+              child: TabBarView(
+                controller: _tabController,
+                children: [
+                  ChatScreen(),
+                  ContactsScreen(),
+                ],
               ),
             ),
           ],
