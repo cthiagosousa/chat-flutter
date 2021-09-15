@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:chat/components/chat_input_widget.dart';
 
 class ChatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
     final arguments =
         ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
 
@@ -11,13 +13,13 @@ class ChatScreen extends StatelessWidget {
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
-            color: Theme.of(context).iconTheme.color,
-            size: Theme.of(context).iconTheme.size,
+            color: theme.iconTheme.color,
+            size: theme.iconTheme.size,
           ),
-          splashRadius: Theme.of(context).iconTheme.size,
+          splashRadius: theme.iconTheme.size,
           onPressed: () => Navigator.pop(context),
         ),
-        leadingWidth: Theme.of(context).iconTheme.size,
+        leadingWidth: theme.iconTheme.size,
         title: Row(
           children: [
             CircleAvatar(
@@ -25,13 +27,13 @@ class ChatScreen extends StatelessWidget {
               backgroundColor: Colors.white,
               child: Text(
                 arguments["profileIcon"],
-                style: Theme.of(context).textTheme.headline5,
+                style: theme.textTheme.headline5,
               ),
             ),
             SizedBox(width: 10),
             Text(
               arguments["title"],
-              style: Theme.of(context).textTheme.headline3,
+              style: theme.textTheme.headline3,
             )
           ],
         ),
@@ -41,8 +43,12 @@ class ChatScreen extends StatelessWidget {
         height: double.infinity,
         child: Column(
           children: [
-            Container(),
-            TextField(),
+            Expanded(
+              child: Container(
+                color: theme.backgroundColor,
+              ),
+            ),
+            ChatInputWidget()
           ],
         ),
       ),

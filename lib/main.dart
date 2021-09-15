@@ -15,8 +15,8 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           backgroundColor: Color(0XFFEBEBEB),
-          primaryColor: Colors.deepOrange[800],
-          accentColor: Colors.deepOrangeAccent,
+          primaryColor: Colors.indigo[600],
+          accentColor: Colors.indigoAccent[400],
           textTheme: TextTheme(
               headline1: GoogleFonts.lobster(
                 fontSize: 22,
@@ -28,12 +28,12 @@ class App extends StatelessWidget {
               ),
               headline4: GoogleFonts.lato(
                 fontSize: 16,
-                color: Colors.deepOrange[800],
+                color: Colors.indigo[600],
                 fontWeight: FontWeight.bold,
               ),
               headline5: GoogleFonts.lato(
                 fontSize: 16,
-                color: Colors.deepOrange[800],
+                color: Colors.indigo[600],
               ),
               headline6: GoogleFonts.lato(
                 fontSize: 18,
@@ -53,7 +53,7 @@ class App extends StatelessWidget {
           ),
           accentIconTheme: IconThemeData(
             size: 23.0,
-            color: Colors.deepOrange[800],
+            color: Colors.indigo[600],
           )),
       routes: {
         '/': (_) => HomeScreen(),

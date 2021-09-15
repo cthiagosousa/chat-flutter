@@ -13,6 +13,8 @@ class ChatItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 3),
       child: Dismissible(
@@ -29,12 +31,12 @@ class ChatItemWidget extends StatelessWidget {
                 Icon(
                   Icons.delete,
                   color: Colors.white,
-                  size: Theme.of(context).iconTheme.size,
+                  size: theme.iconTheme.size,
                 ),
                 SizedBox(width: 5),
                 Text(
                   "Excluir",
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: theme.textTheme.bodyText1,
                 ),
               ],
             ),
@@ -46,17 +48,17 @@ class ChatItemWidget extends StatelessWidget {
             leading: CircleAvatar(
               child: Text(
                 profileIcon,
-                style: Theme.of(context).textTheme.headline3,
+                style: theme.textTheme.headline3,
               ),
-              backgroundColor: Theme.of(context).accentColor,
+              backgroundColor: theme.accentColor,
             ),
             title: Text(
               title,
-              style: Theme.of(context).textTheme.headline4,
+              style: theme.textTheme.headline4,
             ),
             subtitle: Text(
               chat,
-              style: Theme.of(context).textTheme.bodyText2,
+              style: theme.textTheme.bodyText2,
               overflow: TextOverflow.ellipsis,
             ),
             onTap: () => Navigator.pushNamed(context, 'chat/', arguments: {

@@ -9,11 +9,13 @@ class ButtonOptionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+
     return Container(
       width: double.infinity,
       height: 50,
       child: InkWell(
-        splashColor: Theme.of(context).accentColor,
+        splashColor: theme.accentColor,
         onTap: onTap,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -21,13 +23,13 @@ class ButtonOptionWidget extends StatelessWidget {
           children: [
             Icon(
               icon,
-              color: Theme.of(context).accentIconTheme.color,
-              size: Theme.of(context).accentIconTheme.size,
+              color: theme.accentIconTheme.color,
+              size: theme.accentIconTheme.size,
             ),
             SizedBox(width: 10),
             Text(
               text,
-              style: Theme.of(context).textTheme.headline5,
+              style: theme.textTheme.headline5,
             ),
           ],
         ),

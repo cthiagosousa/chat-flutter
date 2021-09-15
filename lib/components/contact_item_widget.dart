@@ -11,27 +11,29 @@ class ContactItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+
     return Card(
       elevation: 0.3,
       child: ListTile(
         leading: CircleAvatar(
           child: Text(
             profileIcon,
-            style: Theme.of(context).textTheme.headline3,
+            style: theme.textTheme.headline3,
           ),
-          backgroundColor: Theme.of(context).accentColor,
+          backgroundColor: theme.accentColor,
         ),
         title: Text(
           name,
-          style: Theme.of(context).textTheme.headline5,
+          style: theme.textTheme.headline5,
         ),
         trailing: IconButton(
           icon: Icon(
             Icons.person,
-            color: Theme.of(context).accentIconTheme.color,
-            size: Theme.of(context).accentIconTheme.size,
+            color: theme.accentIconTheme.color,
+            size: theme.accentIconTheme.size,
           ),
-          splashRadius: Theme.of(context).accentIconTheme.size,
+          splashRadius: theme.accentIconTheme.size,
           onPressed: () {},
         ),
       ),

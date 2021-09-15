@@ -7,6 +7,8 @@ class AppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+
     return Container(
       height: height,
       padding: EdgeInsets.symmetric(horizontal: 10),
@@ -19,7 +21,7 @@ class AppBarWidget extends StatelessWidget {
             children: [
               Text(
                 "Thiago Sousa",
-                style: Theme.of(context).textTheme.headline6,
+                style: theme.textTheme.headline6,
               ),
             ],
           ),
